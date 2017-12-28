@@ -1,25 +1,25 @@
 var data = {
-    // A labels array that can contain any sort of values
-    labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri','Mon', 'Tue', 'Wed', 'Thu', 'Fri','Mon', 'Tue', 'Wed', 'Thu', 'Fri'],
-    // Our series array that contains series objects or in this case series data arrays
+    labels: ['date', 'date', 'date', 'date', 'date','date', 'date', 'date', 'date', 'date'],
     series: [
-      [5, 2, 4, 2, 0]
+      [0 , 2, 4, 2, 5000]
     ]
   };
-  
-  // Create a new line chart object where as first parameter we pass in a selector
-  // that is resolving to our chart container element. The Second parameter
-  // is the actual data object.
 
 const apple = document.getElementById('apple');
-const modal = document.getElementById('modal');  
-
-apple.addEventListener('click', () => {
-    new Chartist.Line('.ct-chart', data);
-});
-
+const modal = document.getElementById('modal');
+const chart = document.querySelector('.ct-chart');
+let title = document.querySelector('.modal-title'); 
+const list = document.querySelector('#list')
+let vege = list.querySelectorAll('.col-2');
 const dropdown = document.querySelector('.dropdown');
 const dro = document.querySelector('.dropdown-menu');
+
+vege.forEach(veg => {
+    veg.addEventListener('click', () => {
+        title.textContent = veg.firstElementChild.firstElementChild.alt;
+        new Chartist.Line('.ct-chart', data);
+    })
+});
 
 dro.addEventListener("click", function(e) {
 	if (e.target.className === 'dropdown-item') {
