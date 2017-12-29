@@ -1,3 +1,4 @@
+//data de la courbe a modifier avec la data du json
 var data = {
     labels: ['date', 'date', 'date', 'date', 'date','date', 'date', 'date', 'date', 'date'],
     series: [
@@ -5,25 +6,40 @@ var data = {
     ]
   };
 
-const apple = document.getElementById('apple');
-const modal = document.getElementById('modal');
+//courbe
 const chart = document.querySelector('.ct-chart');
-let title = document.querySelector('.modal-title'); 
-const list = document.querySelector('#list')
-let vege = list.querySelectorAll('.col-2');
-const dropdown = document.querySelector('.dropdown');
-const dro = document.querySelector('.dropdown-menu');
 
-vege.forEach(veg => {
+//titre du modal prototype, le titre doit etre défini par la data du json
+let titleModal = document.querySelector('.modal-title'); 
+
+//liste des fruizélégumes
+const listVegetales = document.querySelector('#listVegetales')
+
+//fruit ou légume
+let vegetal = listVegetales.querySelectorAll('.col-2');
+
+//div du dropdown menu des differents magasins
+const mercadoList = document.querySelector('.dropdown');
+
+//liste des magasins
+const mercado = document.querySelector('.dropdown-menu');
+
+/*
+pour chaque click sur un légume je défini le titre du modal et j'affiche
+la courbe correspondante (a modifier)
+ */
+
+vegetal.forEach(veg => {
     veg.addEventListener('click', () => {
-        title.textContent = veg.firstElementChild.firstElementChild.alt;
+        titleModal.textContent = veg.firstElementChild.firstElementChild.alt;
         //appeler la data ici
         new Chartist.Line('.ct-chart', data);
     })
 });
 
-dro.addEventListener("click", function(e) {
+//Permet de changer le titre du bouton mercado en fonction du mercado choisi
+mercado.addEventListener("click", function(e) {
 	if (e.target.className === 'dropdown-item') {
-        dropdown.firstElementChild.textContent = e.target.textContent;
+        mercadoList.firstElementChild.textContent = e.target.textContent;
     }
 });

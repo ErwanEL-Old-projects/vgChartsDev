@@ -1,0 +1,92 @@
+[
+    {
+        "nombre": "Zanahoria",
+        "fechas": ["161117","291117","081217","131217","201217"],
+        "precioskg": ["1290", "1580", "1580", "1780", "1190"]  
+    },
+    {
+        "nombre": "Fresa",
+        "fechas": ["161117"],
+        "precioskg": ["8760"]  
+    },
+    {
+        "nombre": "PaltaHass",
+        "fechas": ["221217"],
+        "precioskg": ["4180"]  
+    },
+    {
+        "nombre": "Kiwi",
+        "fechas": ["281117"],
+        "precioskg": ["13180"]  
+    },
+    {
+        "nombre": "Banano",
+        "fechas": ["281117","081217","131217","201217","271217"],
+        "precioskg": ["1980","1780", "1780", "1780", "1780"]
+    },
+    {
+        "nombre": "Durasno Venezolano",
+        "fechas": ["291117"],
+        "precioskg": ["800"]  
+    },
+    {
+        "nombre": "Brocoli",
+        "fechas": ["291117","081217","131217","201217"],
+        "precioskg": ["2980","2980","2980","2980"]  
+    },
+    {
+        "nombre": "Piña Oro Miel",
+        "fechas": ["291117","081217","271217"],
+        "precioskg": ["1980","1780","2180"]  
+    },
+    {
+        "nombre": "Platano Maduro",
+        "fechas": ["011217"],
+        "precioskg": ["1980"]  
+    },
+    {
+        "nombre": "Platano Verde",
+        "fechas": ["011217","201217"],
+        "precioskg": ["1780","1450"]  
+    },
+    {
+        "nombre": "Pimenton",
+        "fechas": ["081217","131217","201217"],
+        "precioskg": ["4680","4680","4800"]  
+    },
+    {
+        "nombre": "Cebolla",
+        "fechas": ["081217","201217"],
+        "precioskg": ["3200","3190"]  
+    },
+    {
+        "nombre": "Repollo",
+        "fechas": ["081217"],
+        "precioskg": ["1180"]  
+    },
+    {
+        "nombre": "Lechuga Batavia",
+        "fechas": ["081217","131217","271217"],
+        "preciosUnd": ["1780","1750","1890"]  
+    },
+    {
+        "nombre": "Espinaca",
+        "fechas": ["131217","271217"],
+        "precioskg": ["5780","5780"]  
+    },
+    {
+        "nombre": "Papa Nevada",
+        "fechas": ["131217"],
+        "precioskg": ["2980"]  
+    },
+    {
+        "nombre": "Papa Capira",
+        "fechas": ["201217"],
+        "precioskg": ["1680"]  
+    },
+    {
+        "nombre": "Pepino",
+        "fechas": ["201217"],
+        "precioskg": ["1580"]  
+    }
+]
