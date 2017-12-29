@@ -17,6 +17,7 @@ const dro = document.querySelector('.dropdown-menu');
 vege.forEach(veg => {
     veg.addEventListener('click', () => {
         title.textContent = veg.firstElementChild.firstElementChild.alt;
+        //appeler la data ici
         new Chartist.Line('.ct-chart', data);
     })
 });
