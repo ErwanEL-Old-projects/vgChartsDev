@@ -111,9 +111,9 @@ let dataVegetales = [
 
 //data de la courbe a modifier avec la data du json
 var data = {
-    labels: ['date', 'date', 'date', 'date', 'date','date', 'date', 'date', 'date', 'date'],
+    labels: [],
     series: [
-      [0 , 2, 4, 2, 5000]
+      []
     ]
   };
 
@@ -135,15 +135,18 @@ const mercadoList = document.querySelector('.dropdown');
 //liste des magasins
 const mercado = document.querySelector('.dropdown-menu');
 
+const ultimoPrecioConocido = document.getElementById('ultimoPrecio');
+const precioMedio = document.getElementById('precioMedio');
+
 /*
-Permet de charger dynamiquement les icones
+Permet de charger dynamiquement les icons
 */
 
 for(let i = 0 ; i < vegetal.length; i+=1) {
     for (let j = 0; j < dataVegetales.length; j+=1) {
        if (i === j) {
-           vegetal[i].firstElementChild.firstElementChild.src = dataVegetales[j].icon;
-           vegetal[i].firstElementChild.firstElementChild.alt = dataVegetales[j].nombre;
+           vegetal[i].firstElementChild.firstElementChild.src = dataVegetales[j].icon; //assignation du svg de l'element dans le html
+           vegetal[i].firstElementChild.firstElementChild.alt = dataVegetales[j].nombre;//assignation du nom de l'element au html
        }
     }   
 }
@@ -152,19 +155,24 @@ for(let i = 0 ; i < vegetal.length; i+=1) {
 pour chaque click sur un légume, défini le titre du modal et affiche
 la courbe correspondante (a modifier)
  */
-vegetal.forEach(veg => {
+
+vegetal.forEach(veg => { //pour chaque click sur un element icon
     veg.addEventListener('click', () => {
-        let alt = veg.firstElementChild.firstElementChild.alt;
-        dataVegetales.forEach(veg => {
-            if (alt === veg.nombre) {
-                titleModal.textContent = veg.nombre;
-                data.labels = veg.fechas;
-                data.series[0] = veg.precioskg;                
+        let alt = veg.firstElementChild.firstElementChild.alt; //selection du "alt" dont le contenu est le nom de l'element
+        dataVegetales.forEach(veg => { //pour chaques element de la data
+            if (alt === veg.nombre) { //si le "alt" de l'element === au nom de la data
+                titleModal.textContent = veg.nombre; //Assignation du titre du modal avec le nom de la data
+                data.labels = veg.fechas; // assignation des elements de l'abscisse
+                if ('preciosUnd' in veg) { //si la clé 'preciosUnd' est contenu dans la data
+                    data.series[0] = veg.preciosUnd; //assignation des prix par unité à l'ordonnée
+                    ultimoPrecioConocido.textContent = `${veg.preciosUnd[veg.preciosUnd.length - 1]} Cop`; //assignation du dernier prix à l'unité
+                } else { //autrement la clé devrait etre precioskg soit le prix au kilo
+                    data.series[0] = veg.precioskg; //assignation ordonnée
+                    ultimoPrecioConocido.textContent = `${veg.precioskg[veg.precioskg.length - 1]} Cop`; //assignation dernier prix au kilo         
+                }
             }
-        })
-        //appeler la data ici
-        new Chartist.Line('.ct-chart', data);
-        console.log(data);
+        });
+        new Chartist.Line('.ct-chart', data); //création de la courbe en fonction de la classe et de la data
     })
 });
 
@@ -172,6 +180,6 @@ vegetal.forEach(veg => {
 
 mercado.addEventListener("click", function(e) {
 	if (e.target.className === 'dropdown-item') {
-        mercadoList.firstElementChild.textContent = e.target.textContent;
+        mercadoList.firstElementChild.textContent = e.target.textContent; //textContent du bouton === textContent de l'element clické
     }
 });
