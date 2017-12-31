@@ -135,8 +135,18 @@ const mercadoList = document.querySelector('.dropdown');
 //liste des magasins
 const mercado = document.querySelector('.dropdown-menu');
 
+//span du dernier prix connu
 const ultimoPrecioConocido = document.getElementById('ultimoPrecio');
+
+//span du prix moyen
 const precioMedio = document.getElementById('precioMedio');
+
+//fonction permettant le calcul du prix moyen
+function calculPrecioMedio (arr) {
+    let precioParse = arr.map(precio => parseInt(precio));
+    let precioMedio = precioParse.reduce((total,precio) => total + precio) / precioParse.length;
+    return precioMedio.toFixed(0);
+}
 
 /*
 Permet de charger dynamiquement les icons
@@ -166,9 +176,11 @@ vegetal.forEach(veg => { //pour chaque click sur un element icon
                 if ('preciosUnd' in veg) { //si la clé 'preciosUnd' est contenu dans la data
                     data.series[0] = veg.preciosUnd; //assignation des prix par unité à l'ordonnée
                     ultimoPrecioConocido.textContent = `${veg.preciosUnd[veg.preciosUnd.length - 1]} Cop`; //assignation du dernier prix à l'unité
+                    precioMedio.textContent = `${calculPrecioMedio(veg.preciosUnd)} Cop`; //assignation du prix moyen
                 } else { //autrement la clé devrait etre precioskg soit le prix au kilo
                     data.series[0] = veg.precioskg; //assignation ordonnée
-                    ultimoPrecioConocido.textContent = `${veg.precioskg[veg.precioskg.length - 1]} Cop`; //assignation dernier prix au kilo         
+                    ultimoPrecioConocido.textContent = `${veg.precioskg[veg.precioskg.length - 1]} Cop`; //assignation dernier prix au kilo
+                    precioMedio.textContent = `${calculPrecioMedio(veg.precioskg)} Cop`; //assignation du prix moyen
                 }
             }
         });
