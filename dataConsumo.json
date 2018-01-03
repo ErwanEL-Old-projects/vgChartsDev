@@ -1,0 +1,110 @@
+[
+    {
+        "nombre": "Zanahoria",
+        "icon": "icons/carrot.svg",
+        "fechas": ["161117","291117","081217","131217","201217"],
+        "precioskg": ["1290", "1580", "1580", "1780", "1190"]  
+    },
+    {
+        "nombre": "Fresa",
+        "icon": "icons/strawberry.svg",
+        "fechas": ["161117"],
+        "precioskg": ["8760"]  
+    },
+    {
+        "nombre": "PaltaHass",
+        "icon": "icons/avocado.svg",
+        "fechas": ["221217"],
+        "precioskg": ["4180"]  
+    },
+    {
+        "nombre": "Kiwi",
+        "icon": "icons/kiwi.svg",
+        "fechas": ["281117"],
+        "precioskg": ["13180"]  
+    },
+    {
+        "nombre": "Banano",
+        "icon": "icons/banana.svg",
+        "fechas": ["281117","081217","131217","201217","271217"],
+        "precioskg": ["1980","1780", "1780", "1780", "1780"]
+    },
+    {
+        "nombre": "Durasno Venezolano",
+        "icon": "icons/peach.svg",
+        "fechas": ["291117"],
+        "precioskg": ["800"]  
+    },
+    {
+        "nombre": "Brocoli",
+        "icon": "icons/broccoli.svg",
+        "fechas": ["291117","081217","131217","201217"],
+        "precioskg": ["2980","2980","2980","2980"]  
+    },
+    {
+        "nombre": "Piña Oro Miel",
+        "icon": "icons/pineapple.svg",
+        "fechas": ["291117","081217","271217"],
+        "precioskg": ["1980","1780","2180"]  
+    },
+    {
+        "nombre": "Platano Maduro",
+        "icon": "icons/banana.svg",
+        "fechas": ["011217"],
+        "precioskg": ["1980"]  
+    },
+    {
+        "nombre": "Platano Verde",
+        "icon": "icons/banana.svg",
+        "fechas": ["011217","201217"],
+        "precioskg": ["1780","1450"]  
+    },
+    {
+        "nombre": "Pimenton",
+        "icon": "icons/pepper.svg",
+        "fechas": ["081217","131217","201217"],
+        "precioskg": ["4680","4680","4800"]  
+    },
+    {
+        "nombre": "Cebolla",
+        "icon": "icons/onion-1.svg",
+        "fechas": ["081217","201217"],
+        "precioskg": ["3200","3190"]  
+    },
+    {
+        "nombre": "Repollo",
+        "icon": "icons/cabbage.svg",
+        "fechas": ["081217"],
+        "precioskg": ["1180"]  
+    },
+    {
+        "nombre": "Lechuga Batavia",
+        "icon": "icons/salad-1.svg",
+        "fechas": ["081217","131217","271217"],
+        "preciosUnd": ["1780","1750","1890"]  
+    },
+    {
+        "nombre": "Espinaca",
+        "icon": "icons/spinach.svg",
+        "fechas": ["131217","271217"],
+        "precioskg": ["5780","5780"]  
+    },
+    {
+        "nombre": "Papa Nevada",
+        "icon": "icons/potatoes-2.svg",
+        "fechas": ["131217"],
+        "precioskg": ["2980"]  
+    },
+    {
+        "nombre": "Papa Capira",
+        "icon": "icons/potatoes-2.svg",
+        "fechas": ["201217"],
+        "precioskg": ["1680"]  
+    },
+    {
+        "nombre": "Pepino",
+        "icon": "icons/cucumber.svg",
+        "fechas": ["201217"],
+        "precioskg": ["1580"]  
+    }
+]
