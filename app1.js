@@ -1,4 +1,4 @@
-let dataVegetales = [
+const dataVegetales = [
     {
         "nombre": "Zanahoria",
         "icon": "icons/carrot.svg",
@@ -109,13 +109,8 @@ let dataVegetales = [
     }
 ];
 
+//selectionne ul
 const listGroup = document.querySelector('.list-group');
-
-//non fonctionnel
-const pillsToggle = () => {
-    this.classList.toggle('badge-danger');
-    this.classList.toggle('badge-success');
-}
 
 //calcul la variation du prix a integrer dans les pills
 const priceVariation = (e) => {
@@ -137,58 +132,46 @@ const list = () =>  {
                                 ${data.nombre}
                                 <span class="badge badge-danger badge-pill">${priceVariation(data)}</span>
                                 </li>
-                                <div>
+                                <div style="display: 'none'">
                                 </div>`
     });
 };
 list();
 
+//liste des elements et liste des divs
+const listElements = document.querySelectorAll('.list-group li');
+const listDivs = document.querySelectorAll('.list-group div');
 
-const listElements = Array.from(listGroup.children);
 
-//permet de changer la couleur de la pill (non fonctionnel)
+let dataChart = {
+    labels: [],
+    series: [
+        []
+    ]
+};
+
+//permet de changer la couleur de la pill
 listElements.forEach(e => {
-    let spanPills = e.firstElementChild.nextElementSibling;
-    if(parseInt(spanPills.textContent) < 0 ) {
-        e.firstElementChild.nextElementSibling.classList.remove('badge-danger');              
-        e.firstElementChild.nextElementSibling.classList.add('badge-success');
-    } else {
-        e.firstElementChild.nextElementSibling.classList.remove('badge-success');
-        e.firstElementChild.nextElementSibling.classList.add('badge-danger');              
-    }
-})
+    if(parseInt(e.firstElementChild.nextElementSibling.textContent) > 0 ) {
+         e.firstElementChild.nextElementSibling.classList.toggle('badge-success');
+         e.firstElementChild.nextElementSibling.classList.toggle('badge-danger');              
+    };
+});
 
 //permet d'implementer la courbe (non fonctionnel)
-listElements.forEach(e => e.addEventListener('click', () => {
+listElements.forEach(e => e.addEventListener('click', () => {  
+    let toggle = false; //ne sert a rien
     dataVegetales.forEach(veg => {
-        if(e.firstElementChild.alt === veg.nombre) {
-            e.nextElementSibling.classList.add('ct-chart')
-            new Chartist.Line('.ct-chart', {
-                fechas: veg.fechas,
-                precios: [
-                  veg.precioskg
-                ]
-              });
+        if(e.firstElementChild.alt === veg.nombre) { //creation de la courbe avec la data
+            dataChart.labels = veg.fechas;
+            dataChart.series[0] = veg.precioskg || veg.preciosUnd;
+            e.nextElementSibling.style.display = 'block';
+            e.nextElementSibling.classList.add('ct-chart');
+            listDivs.forEach(div => {
+                if (e.nextElementSibling.classList.contains('ct-chart')) {
+                    new Chartist.Line('.ct-chart', dataChart);
+                }
+            })
         }
-       
     })
-}));
-
-
-//modèle chart
-
-// new Chartist.Line('.ct-chart', {
-//     fechas: [],
-//     precios: [
-//       []
-//     ]
-//   });
-
-
-//modèle li initial
-
-// let li = `<li class="list-group-item d-flex justify-content-between align-items-center">
-//             <img src=${data.icon} alt="">
-//             ${data.nombre}
-//             <span class="badge badge-danger badge-pill"></span>
-//             </li>`
+}))
