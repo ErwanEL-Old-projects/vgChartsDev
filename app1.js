@@ -8,14 +8,14 @@ const dataVegetales = [
     {
         "nombre": "Brocoli",
         "icon": "icons/broccoli.svg",
-        "fechas": ["291117","081217","131217","201217"],
-        "precioskg": ["2980","2980","2980","2980"]  
+        "fechas": ["291117","081217","131217","201217","020118"],
+        "precioskg": ["2980","2980","2980","2980","2980"]  
     },
     {
         "nombre": "Cebolla",
         "icon": "icons/onion-1.svg",
-        "fechas": ["081217","201217"],
-        "precioskg": ["3200","3190"]  
+        "fechas": ["081217","201217","020118"],
+        "precioskg": ["3200","3190","3200"]  
     },
     {
         "nombre": "Durasno Venezolano",
@@ -50,8 +50,8 @@ const dataVegetales = [
     {
         "nombre": "Palta Hass",
         "icon": "icons/avocado.svg",
-        "fechas": ["221217"],
-        "precioskg": ["4180"]  
+        "fechas": ["221217","050118"],
+        "precioskg": ["4180","3880"]  
     },
     {
         "nombre": "Papa Capira",
@@ -68,14 +68,14 @@ const dataVegetales = [
     {
         "nombre": "Pepino",
         "icon": "icons/cucumber.svg",
-        "fechas": ["201217"],
-        "precioskg": ["1580"]  
+        "fechas": ["201217","050118"],
+        "precioskg": ["1580","1490"]  
     },
     {
         "nombre": "Pimenton",
         "icon": "icons/pepper.svg",
-        "fechas": ["081217","131217","201217"],
-        "precioskg": ["4680","4680","4800"]  
+        "fechas": ["081217","131217","201217","020118"],
+        "precioskg": ["4680","4680","4800","5690"]  
     },
     {
         "nombre": "Piña Oro Miel",
@@ -86,14 +86,14 @@ const dataVegetales = [
     {
         "nombre": "Platano Maduro",
         "icon": "icons/platano.svg",
-        "fechas": ["011217"],
-        "precioskg": ["1980"]  
+        "fechas": ["011217","050118"],
+        "precioskg": ["1980","980"]  
     },
     {
         "nombre": "Platano Verde",
         "icon": "icons/platano-verde.svg",
-        "fechas": ["011217","201217"],
-        "precioskg": ["1780","1450"]  
+        "fechas": ["011217","201217","050118"],
+        "precioskg": ["1780","1450","1780"]  
     }, 
     {
         "nombre": "Repollo",
@@ -104,8 +104,8 @@ const dataVegetales = [
     {
         "nombre": "Zanahoria",
         "icon": "icons/carrot.svg",
-        "fechas": ["161117","291117","081217","131217","201217"],
-        "precioskg": ["1290", "1580", "1580", "1780", "1190"]  
+        "fechas": ["161117","291117","081217","131217","201217","050118"],
+        "precioskg": ["1290", "1580", "1580", "1780", "1190","1380"]  
     }
 ];
 
