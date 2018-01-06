@@ -12,7 +12,7 @@ const dataVegetales = [
         "precioskg": ["8760"]  
     },
     {
-        "nombre": "PaltaHass",
+        "nombre": "Palta Hass",
         "icon": "icons/avocado.svg",
         "fechas": ["221217"],
         "precioskg": ["4180"]  
@@ -109,6 +109,11 @@ const dataVegetales = [
     }
 ];
 
+//permet de creer un id valide pour les divs
+function getId (a) {
+    return a.split(' ').join('').toLowerCase();
+}
+
 //selectionne ul
 const listGroup = document.querySelector('.list-group');
 
@@ -128,11 +133,11 @@ const priceVariation = (e) => {
 const list = () =>  {
     dataVegetales.forEach(data => {
         listGroup.innerHTML += `<li class="list-group-item d-flex justify-content-between align-items-center">
-                                <img src=${data.icon} alt="${data.nombre}">
+                                <img src=${data.icon}>
                                 ${data.nombre}
                                 <span class="badge badge-danger badge-pill">${priceVariation(data)}</span>
                                 </li>
-                                <div style="display: 'none'">
+                                <div id=${getId(data.nombre)}>
                                 </div>`
     });
 };
@@ -142,14 +147,6 @@ list();
 const listElements = document.querySelectorAll('.list-group li');
 const listDivs = document.querySelectorAll('.list-group div');
 
-
-let dataChart = {
-    labels: [],
-    series: [
-        []
-    ]
-};
-
 //permet de changer la couleur de la pill
 listElements.forEach(e => {
     if(parseInt(e.firstElementChild.nextElementSibling.textContent) > 0 ) {
@@ -158,20 +155,41 @@ listElements.forEach(e => {
     };
 });
 
-//permet d'implementer la courbe (non fonctionnel)
+
+//permet d'implementer la courbe pour chaque click
+
 listElements.forEach(e => e.addEventListener('click', () => {  
-    let toggle = false; //ne sert a rien
-    dataVegetales.forEach(veg => {
-        if(e.firstElementChild.alt === veg.nombre) { //creation de la courbe avec la data
-            dataChart.labels = veg.fechas;
-            dataChart.series[0] = veg.precioskg || veg.preciosUnd;
-            e.nextElementSibling.style.display = 'block';
-            e.nextElementSibling.classList.add('ct-chart');
-            listDivs.forEach(div => {
-                if (e.nextElementSibling.classList.contains('ct-chart')) {
-                    new Chartist.Line('.ct-chart', dataChart);
-                }
-            })
+    dataVegetales.forEach(data => {
+        if(e.nextElementSibling.id === getId(data.nombre)) {
+            new Chartist.Line(`#${e.nextElementSibling.id}`, { labels: data.fechas,
+                                                series: [
+                                                    data.precioskg || data.preciosUnd
+                                                ]
+                                            });
         }
     })
 }))
+
+//permet d'implementer la courbe dynamiquement
+
+// listDivs.forEach(div => {
+//     dataVegetales.forEach(data => {
+//         if(div.id === getId(data.nombre)) {
+//             new Chartist.Line(`#${div.id}`, { labels: data.fechas,
+//                                                 series: [
+//                                                     data.precioskg || data.preciosUnd
+//                                                 ]
+//                                             });
+//         }
+//     })
+// })
+
+
+//modèle
+//let dataChart = {
+    //         labels: [],
+    //         series: [
+    //             []
+    //         ]
+    //     };
+
