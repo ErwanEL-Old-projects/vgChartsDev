@@ -2,9 +2,9 @@ const dataVegetales = [
     {
         "nombre": "Banano",
         "icon": "banana",
-        "fechas": ["291117","081217","131217","201217","020118"],
+        "fechas": ["291117","081217","131217","201217","020118","120118"],
         "precios": {
-            "consumo" :["1980","1780", "1780", "1780", "1780"],
+            "consumo" :["1980","1780", "1780", "1780", "1780", "1980"],
             "jumbo" :   ["1190","1190","1190","1190","1190"], //exemple
             "exito" : ["1290","1290","1290","1290","2000"] //exemple
         } 
@@ -20,11 +20,11 @@ const dataVegetales = [
     {
         "nombre": "Cebolla",
         "icon": "onion-1",
-        "fechas": ["081217","201217","020118"],
+        "fechas": ["081217","201217","020118","120118"],
         "precios": {
-            "consumo" :["3200","3190","3200"],
+            "consumo" :["3200","3190","3200","1980"],
             "jumbo" : [],
-            "exito" : ["2700"]
+            "exito" : ["2700","2700"]
         }
     },
     {
@@ -58,9 +58,9 @@ const dataVegetales = [
     {
         "nombre": "Espinaca",
         "icon": "spinach",
-        "fechas": ["131217","271217"],
+        "fechas": ["131217","271217","120118"],
         "precios": {
-            "consumo" :["5780","5780"]
+            "consumo" :["5780","5780","5780"]
         }
     },  
     {
@@ -80,11 +80,11 @@ const dataVegetales = [
         } 
     },
     {
-        "nombre": "Lechuga Batavia",
+        "nombre": "Lechuga Batavia und",
         "icon": "salad-1",
-        "fechas": ["081217","131217","271217"],
+        "fechas": ["081217","131217","271217","120118"],
         "precios": {
-            "consumo" :["1780","1750","1890"]
+            "consumo" :["1780","1750","1890","1980"]
         }
     },    
     {
@@ -124,17 +124,17 @@ const dataVegetales = [
     {
         "nombre": "Pimenton",
         "icon": "pepper",
-        "fechas": ["081217","131217","201217","020118"],
+        "fechas": ["081217","131217","201217","020118","120118"],
         "precios": {
-            "consumo" :["4680","4680","4800","5690"]  
+            "consumo" :["4680","4680","4800","5690","5090"]  
         } 
     },
     {
         "nombre": "Piña Oro Miel",
         "icon": "pineapple",
-        "fechas": ["291117","081217","271217"],
+        "fechas": ["291117","081217","271217","120118"],
         "precios": {
-            "consumo" :["1980","1780","2180"] 
+            "consumo" :["1980","1780","2180","1980"] 
         }
     },
     {
@@ -156,11 +156,27 @@ const dataVegetales = [
     {
         "nombre": "Repollo",
         "icon": "cabbage",
-        "fechas": ["081217"],
+        "fechas": ["081217","120118"],
         "precios": {
-            "consumo" :["1180"],
+            "consumo" :["1180","1550"],
             "jumbo" : ["1900"],
             "exito" : []
+        }
+    },
+    {
+        "nombre": "Repollo Morado",
+        "icon": "cabbage-red",
+        "fechas": ["120118"],
+        "precios": {
+            "consumo" :["1850"]
+        }
+    },
+    {
+        "nombre": "Tomate",
+        "icon": "tomato",
+        "fechas": [],
+        "precios": {
+            "consumo" :[]
         }
     },
     {
